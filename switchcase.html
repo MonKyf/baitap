@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        let total = 0;
+        let count =1;
+        for (let  i = 1;  i <=10; i++) {
+            if(count <=10){
+                total=count*i;
+                count++;
+            }
+            if(total<=100){
+                console.log(total);
+            }
+        }*/
+        /* 
+        //bài 1:
+        function tinhTong(arr) {
+        let tong = 0;
+
+        for (let i = 1; i < arr.length; i++) {
+            if (arr[i] > arr[i - 1]) {
+            tong += arr[i];
+            }
+        }
+
+        return tong;
+        }
+        let input = prompt("Nhập mảng các số, cách nhau bằng dấu phẩy (ví dụ: 1,2,3):");
+        let mang = input.split(',').map(Number);
+        if (mang.length < 2) {
+        alert("Yêu cầu ít nhất 2 số để tính tổng.");
+        } else {
+        let ketQua = tinhTong(mang);
+        alert("Tổng các giá trị lớn hơn giá trị đứng liền trước nó là: "+ ketQua);
+        }*/
+        /*
+        //bai 2
+        function tinhTrungBinhCongSoDuong(arr) {
+        let tong = 0;
+        let soDuong = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] > 0) {
+            tong += arr[i];
+            soDuong++;
+            }
+        }
+        let trungBinh = soDuong > 0 ? tong / soDuong : 0;
+        return trungBinh;
+        }
+        let input = prompt("Nhập mảng các số thực, cách nhau bằng dấu phẩy (ví dụ: 1.2,3.4,5.6):");
+        let mang = input.split(',').map(parseFloat);
+        let ketQua = tinhTrungBinhCongSoDuong(mang);
+        alert("Trung bình cộng các số dương trong mảng là: " + ketQua);
+        */
+        /*
+        //bài 3
+
+        function chuyenSoChiaHetCho3VeDau(arr) {
+        let soChiaHetCho3 = arr.filter((so) => so % 3 === 0);
+        let soKhongChiaHetCho3 = arr.filter((so) => so % 3 !== 0);
+        let ketQua = soChiaHetCho3.concat(soKhongChiaHetCho3);
+        return ketQua;
+        }
+        let input = prompt("Nhập mảng các số, cách nhau bằng dấu phẩy (ví dụ: 1,2,3,4,5,6):");
+        let mang = input.split(',').map(parseFloat);
+        let ketQua = chuyenSoChiaHetCho3VeDau(mang);
+        alert("Mảng sau khi di chuyển các số chia hết cho 3 về đầu: " + ketQua);
+        */
+        /*
+       // bài 4
+        function daoNguocMang(arr) {
+        return arr.reverse();
+        }
+        let input = prompt("Nhập mảng các số, cách nhau bằng dấu phẩy (ví dụ: 1,2,3,4,5,6):");
+        let mang = input.split(',').map(parseFloat);
+        let mangBanDau = [...mang];
+        let ketQua = daoNguocMang(mangBanDau);
+        alert("Mảng ban đầu: " + mang);
+        alert("Mảng sau khi đảo ngược: " + ketQua);
+        */
+        /*
+        //bài 5
+        function lietKeSoTrongDoan(arr, x, y) {
+        let ketQua = arr.filter((so) => so >= x && so <= y);
+        return ketQua;
+        }
+        let input = prompt("Nhập mảng các số thực, cách nhau bằng dấu phẩy (ví dụ: 1.2,3.4,5.6):");
+        let mang = input.split(',').map(parseFloat);
+        let x = parseFloat(prompt("Nhập giá trị x:"));
+        let y = parseFloat(prompt("Nhập giá trị y:"));
+        let ketQua = lietKeSoTrongDoan(mang, x, y);
+        alert(`Các số trong đoạn [${x}, ${y}]: ` + ketQua);
+        */
+        /*
+        //bài 6
+        function lietKeGiaTriLonHonTuyetDoi(arr) {
+        let ketQua = [];
+
+        for (let i = 0; i < arr.length - 1; i++) {
+            if (arr[i] > Math.abs(arr[i + 1])) {
+            ketQua.push(arr[i]);
+            }
+        }
+        if (arr[arr.length - 1] > 0) {
+            ketQua.push(arr[arr.length - 1]);
+        }
+
+        return ketQua;
+        }
+        let input = prompt("Nhập mảng các số thực, cách nhau bằng dấu phẩy (ví dụ: 1.2,3.4,5.6):");
+        let mang = input.split(',').map(parseFloat);
+        let ketQua = lietKeGiaTriLonHonTuyetDoi(mang);
+        alert("Các giá trị lớn hơn giá trị tuyệt đối của giá trị đứng liền sau nó là: " + ketQua);
+        */
+        /*
+        //bài 7
+        function laSoChinhPhuong(num) {
+        return Math.sqrt(num) % 1 === 0;
+        }
+        function lietKeViTriSoChinhPhuong(arr) {
+        let viTriChinhPhuong = [];
+
+        for (let i = 0; i < arr.length; i++) {
+            if (laSoChinhPhuong(arr[i])) {
+            viTriChinhPhuong.push(i);
+            }
+        }
+        return viTriChinhPhuong;
+        }
+        let input = prompt("Nhập mảng các số nguyên, cách nhau bằng dấu phẩy (ví dụ: 1,4,9,16):");
+        let mang = input.split(',').map(Number);
+        let ketQua = lietKeViTriSoChinhPhuong(mang);
+        alert("Các vị trí của số chính phương trong mảng là: " + ketQua);
+        */
+        /*
+        //bài 8
+        function sapXepLeTangDan(arr) {
+        // Tách mảng thành mảng lẻ và mảng chẵn
+        let mangLe = arr.filter(num => num % 2 !== 0);
+        let mangChan = arr.filter(num => num % 2 === 0);
+        mangLe.sort((a, b) => a - b);
+        let ketQua = [];
+        let indexLe = 0;
+        let indexChan = 0;
+
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 !== 0) {
+            ketQua.push(mangLe[indexLe]);
+            indexLe++;
+            } else {
+            ketQua.push(mangChan[indexChan]);
+            indexChan++;
+            }
+        }
+
+        return ketQua;
+        }
+        let input = prompt("Nhập mảng các số nguyên, cách nhau bằng dấu phẩy (ví dụ: 3,1,4,2,5):");
+        let mang = input.split(',').map(Number);
+        let ketQua = sapXepLeTangDan(mang);
+        alert("Mảng sau khi sắp xếp lẻ tăng dần nhưng giữ nguyên vị trí của các giá trị khác: " + ketQua);
+        */
+        /*
+        // bài 9
+        function sapXepDuongAm(arr) {
+        let mangDuong = arr.filter(num => num > 0);
+        let mangAm = arr.filter(num => num < 0);
+        mangDuong.sort((a, b) => a - b);
+        mangAm.sort((a, b) => b - a);
+        let ketQua = arr.map(num => (num > 0 ? mangDuong.shift() : mangAm.shift()));
+        return ketQua;
+        }
+        let input = prompt("Nhập mảng các số nguyên, cách nhau bằng dấu phẩy (ví dụ: 3,-1,4,-2,5):");
+        let mang = input.split(',').map(Number);
+        let ketQua = sapXepDuongAm(mang);
+        alert("Mảng sau khi sắp xếp số dương tăng dần và số âm giảm dần, giữ nguyên vị trí: " + ketQua);
+        */
+        /*
+        //bài 10
+        function themPhanTuVaoMang(arr, x, k) {
+        if (k < 0 || k > arr.length) {
+            console.log("Vị trí không hợp lệ");
+            return arr;
+        }
+
+        arr.splice(k, 0, x);
+        return arr;
+        }
+        let inputArray = prompt("Nhập mảng các số, cách nhau bằng dấu phẩy (ví dụ: 1,2,3,4,5):");
+        let mang = inputArray.split(',').map(Number);
+        let giaTriThem = parseFloat(prompt("Nhập giá trị cần thêm vào mảng:"));
+        let viTriThem = parseInt(prompt("Nhập vị trí cần thêm giá trị:"));
+        let ketQua = themPhanTuVaoMang(mang, giaTriThem, viTriThem);
+        alert("Mảng sau khi thêm giá trị :" + ketQua);
+        */
+
+    </script> 
+
+</body>
+</html>
